@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>로그인 하시오</title>
+    <style media="screen">
+      html, body{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        overflow: auto;
+      }
+      p{
+        margin: 0;
+        padding: 0;
+        line-height: 1em;
+      }
+      a{
+        text-decoration: inherit;
+        color:inherit;
+        cursor: pointer;
+      }
+      input[type=submit]{
+        float: right;
+        height: 48px;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 4px 12px 8px 12px;
+        border: none;
+        border-radius: 2px;
+        background: #3ABF97;
+        color: #ffffff;
+        cursor: pointer;
+      }
+      input[type=submit]:hover{
+        background: #ffffff;
+        color: #2D9475;
+        box-shadow: 0px 0px 32px gray;
+      }
+    </style>
+  </head>
+  <body>
+    <form method=get action=http://192.168.255.254/login/urlredir.cgi name=misc_fm>
+      <input type=hidden name=page value=url_redirect>
+      <input type=hidden name=subpage value=allow>
+      <input ID='bt' type=submit value='양심있으면 동주한테 음료수 사주자'>
+    </table>
+  </form>
+  </body>
+</html>
