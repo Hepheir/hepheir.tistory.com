@@ -5,36 +5,42 @@
     <title>로그인 하시오</title>
     <style media="screen">
       html, body{
-        width: 100%;
+        width: 80%;
         height: 100%;
         margin: 0;
-        padding: 0;
+        padding: 0 10% 0 10%;
         text-align: center;
         overflow: auto;
+        font-size: 32px;
       }
       p{
         margin: 0;
         padding: 0;
-        line-height: 1em;
+        line-height: 1.5em;
+        text-align: justify;
       }
       a{
         text-decoration: inherit;
         color:inherit;
         cursor: pointer;
       }
+      input{
+        display:none;
+      }
       input[type=submit]{
-        float: right;
-        height: 48px;
-        font-size: 20px;
+        display:inline-block;
+        height: 96px;
+        font-size: 40px;
         font-weight: bold;
-        padding: 4px 12px 8px 12px;
+        padding: 0 12px 8px 12px;
         border: none;
-        border-radius: 2px;
+        border-radius: 8px;
         background: #3ABF97;
         color: #ffffff;
         cursor: pointer;
       }
       input[type=submit]:hover{
+        display:inline-block;
         background: #ffffff;
         color: #2D9475;
         box-shadow: 0px 0px 32px gray;
@@ -42,10 +48,13 @@
     </style>
   </head>
   <body>
-    <form method=get action=http://192.168.255.254/login/urlredir.cgi name=misc_fm>
+    <h1>공지</h1>
+    <p>속도가 너무 느려 정 맘에 안들면 데이터 써. 감사는 커녕 허구한 날 와서 찡찡거리지 말고.</p>
+    <br><br>
+    <form id="iptime_login" method=get action=http://192.168.255.254/login/urlredir.cgi name=misc_fm>
       <input type=hidden name=page value=url_redirect>
       <input type=hidden name=subpage value=allow>
-      <input ID='bt' type=submit value='양심있으면 동주한테 음료수 사주자'>
+      <input ID='bt' type=submit value='인터넷 요정의 마법의 버튼'>
     </table>
   </form>
   </body>
