@@ -26,7 +26,7 @@
       input{
         display:none;
       }
-      input[type=submit]{
+      input[type=button]{
         display:inline-block;
         height: 96px;
         font-size: 40px;
@@ -38,7 +38,7 @@
         color: #ffffff;
         cursor: pointer;
       }
-      input[type=submit]:hover{
+      input[type=button]:hover{
         display:inline-block;
         background: #ffffff;
         color: #2D9475;
@@ -53,7 +53,7 @@
     <form id="iptime_login" method=get action=http://192.168.255.254/login/urlredir.cgi name=misc_fm>
       <input type=hidden name=page value=url_redirect>
       <input type=hidden name=subpage value=allow>
-      <input ID='bt' type=button value='인터넷 요정의 마법의 버튼' onclick="document.getElementsByName('misc_fm').submit();">
+      <input ID='bt' type='button' value='인터넷 요정의 마법의 버튼' onclick='document.getElementsByName("misc_fm").submit();'>
     </table>
   </form>
   </body>
