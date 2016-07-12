@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/2014/REC-html5-20141028/">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>두 가지 경우의 수</title>
+    <link rel="stylesheet" href="./binary.css" charset="utf-8">
+    <script type="text/javascript" src="./binary.js"></script>
+  </head>
+  <body>
+    <div id="header"><p id="info">실험</p><input id="execute" type="button" value="Execute" title="1회 클릭에 16번의 시행을 함" onclick="execute()"></div>
+    <div id="bodyWrap">
+      <table>
+        <thead>
+          <tr class="header">
+            <th class="n">시행</th>
+            <th class="x">값</th>
+            <th class="s">누적 값</th>
+            <th class="p" colspan="2">누적평균</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <tr><td style="color:#ffffff;">-</td></tr>
+          <tr><td style="color:#ffffff;">-</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="bodyWrap_1">
+      <div id="bodyWrap_2">
+      </div>
+    </div>
+    <hr id="line" title="0.5">
+  </body>
+</html>
