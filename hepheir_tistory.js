@@ -5,49 +5,80 @@ console.log('isMobile :', isMobile);
 // console.log('isMobile :', isMobile);
 
 
+// 2016 10 30 에 작성. protected article이 focus되었을 때 opacity transition을 받지 않도록 해주는 기능.
+
+class ProtectedFeeds {
+  constructor() {
+    this.feedPw = document.querySelectorAll('.feed-protected__article_password');
+
+    this.addEventListeners();
+  }
+
+  addEventListeners() {
+    for (var i = 0; i < this.feedPw.length; i++) {
+      this.feedPw[i].addEventListener('focus', this.onFocused);
+      this.feedPw[i].addEventListener('focusout', this.unFocused);
+    }
+  }
+
+  onFocused(evt) {
+    event.target.parentNode.parentNode.classList.add('--focused');
+  }
+
+  unFocused(evt) {
+    event.target.parentNode.parentNode.classList.remove('--focused');
+  }
+}
+new ProtectedFeeds();
+
+
 // 2016 10 25 에 작성. 날짜, 윤년 계산을 세심히 하지 않았으므로 수능 끝나고 다시 검토 할 것을 당부.
 
-window.addEventListener('load', function(){
-  var feedDate = document.querySelectorAll('.feed__date');
-  var date = new Date();
-  console.log(date);
-
-  const td = {
-    year : date.getFullYear(),
-    month : date.getMonth() + 1, // month : 0 ~ 11 (zero-based index)
-    day : date.getDate(),
-    hour : date.getHours(),
-    minute : date.getMinutes()
-  };
-
-  console.log(td);
-
-  for (var i = 0; i < feedDate.length; i++) {
-    a = feedDate[i].innerHTML.split('.');
-
-    fd = {
-      year : parseInt(a[0]),
-      month : parseInt(a[1]),
-      day : parseInt(a[2].split(' ')[0]),
-      hour : parseInt(a[2].split(' ')[1].split(':')[0]),
-      minute : parseInt(a[2].split(' ')[1].split(':')[1])
+class DateFix {
+  constructor() {
+    this.feedDate = document.querySelectorAll('.feed__date');
+    this.date = new Date();
+    this.td = {
+      year : this.date.getFullYear(),
+      month : this.date.getMonth() + 1, // month : 0 ~ 11 (zero-based index)
+      day : this.date.getDate(),
+      hour : this.date.getHours(),
+      minute : this.date.getMinutes()
     };
 
-    if (td.year > fd.year) {
-      b = td.year - 1 > fd.year ? `${td.year - fd.year}년` : `${td.month - fd.month + 12}달`;
+    this.fixDate = this.fixDate.bind(this);
+
+    for (var i = 0; i < this.feedDate.length; i++) {
+      this.fixDate(this.feedDate[i]);
     }
-    else if (td.month > fd.month) {
-      b = td.month - 2 > fd.month ? `${td.month - fd.month}달` : `${Math.floor((td.day - fd.day + (td.month - fd.month) * (new Date( fd.year, fd.month, 0)).getDate())/7)}주`;
+  }
+
+  fixDate(_feedDate) {
+    this.a = _feedDate.innerHTML.split('.');
+    this.fd = {
+      year : parseInt(this.a[0]),
+      month : parseInt(this.a[1]),
+      day : parseInt(this.a[2].split(' ')[0]),
+      hour : parseInt(this.a[2].split(' ')[1].split(':')[0]),
+      minute : parseInt(this.a[2].split(' ')[1].split(':')[1])
+    };
+
+    if (this.td.year > this.fd.year) {
+      this.fixedDate = this.td.year - 1 > this.fd.year ? `${this.td.year - this.fd.year}년` : `${this.td.month - this.fd.month + 12}달`;
     }
-    else if (td.day > fd.day) {
-      b = td.day - 1 > fd.day ? `${td.day - fd.day}일` : `${td.hour - fd.hour + 24}시간`;
+    else if (this.td.month > this.fd.month) {
+      this.fixedDate = this.td.month - 2 > this.fd.month ? `${this.td.month - this.fd.month}달` : `${Math.floor((this.td.day - this.fd.day + (this.td.month - this.fd.month) * (new Date(this.fd.year, this.fd.month, 0)).getDate())/7)}주`;
+    }
+    else if (this.td.day > this.fd.day) {
+      this.fixedDate = this.td.day - 1 > this.fd.day ? `${this.td.day - this.fd.day}일` : `${this.td.hour - this.fd.hour + 24}시간`;
     }
     else {
-      b = td.hour > fd.hour ? `${td.hour - fd.hour}시간` : `${td.minute - fd.minute}분`;
+      this.fixedDate = this.td.hour > this.fd.hour ? `${this.td.hour - this.fd.hour}시간` : `${this.td.minute - this.fd.minute}분`;
     }
-    console.log(td.month, fd.month);
+    console.log(this.td.month, this.fd.month);
 
-    feedDate[i].innerHTML = b;
+    _feedDate.innerHTML = this.fixedDate;
   }
-  console.log('fixed dates');
-})
+}
+
+new DateFix();
