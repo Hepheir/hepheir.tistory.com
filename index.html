@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/2014/REC-html5-20141028/">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>두 가지 경우의 수</title>
+    <style media="screen">
+      @charset "UTF-8";
+      html, body{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+        min-width: 680px;
+      }
+      *{
+        font-family: "맑은 고딕";
+        line-height: 1.2em;
+      }
+      p{
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        font-size: 18px;
+      }
+      div#header{
+        width: calc(100% - 16px);
+        height: 48px;
+        background: #33BA85;
+        border-radius:0 0 8px 8px;
+        color: #ffffff;
+        font-size: 32px;
+        padding: 8px;
+      }
+      div#bodyWrap_1{
+        margin: 0;
+        width: calc(100% - 32px);
+        height: 320px;
+        overflow-y: hidden;
+        overflow-x: auto;
+        padding: 16px;
+        font-size: 16px;
+      }
+      div#bodyWrap_2{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+      div.bar{
+        display: inline-block;
+        width: 6px;
+        height: 100%;
+      }
+      span{
+        display: block;
+        height: 100%;
+        position: relative;
+        /*background-image: url('./img/line.png');*/
+        background-repeat: no-repeat;
+      }
+      em{
+        display: block;
+        background: red;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        width: 6px;
+        height: 6px;
+        font-size: 0;
+      }
+      hr#line{
+        border: solid 1px red;
+        width: 100%;
+        position: fixed;
+        bottom: calc(327px / 2);
+      }
+      div#bodyWrap{
+        margin: 0;
+        width: calc(100% - 32px);
+        height: calc(100% - 72px - 352px);
+        min-height: 160px;
+        padding: 0 16px 8px 16px;
+        overflow-x: hidden;
+        font-size: 16px;
+      }
+      input#execute{
+        float: right;
+        height: 100%;
+        font-size: 20px;
+        border: solid 1px gray;
+      }
+      table{
+        width: 100%;
+        text-align: left;
+        border-spacing: 0;
+      }
+      thead{
+        display: block;
+        padding-top: 8px;
+        width: calc(100% - 16px);
+        height: 24px;
+        float: inherit;
+        position: absolute;
+        background: white;
+        min-width: 680px;
+      }
+      tbody{
+        overflow-y: auto;
+      }
+      td.n ,th.n{
+        width: 128px;
+      }
+      td.x ,th.x{
+        width: 128px;
+      }
+      td.s ,th.s{
+        width: 128px;
+      }
+      td.p ,th.p{
+      }
+      td.pf{
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header"><p id="info">실험</p><input id="execute" type="button" value="Execute" title="1회 클릭에 16번의 시행을 함" onclick="execute()"></div>
+    <div id="bodyWrap">
+      <table>
+        <thead>
+          <tr class="header">
+            <th class="n">시행</th>
+            <th class="x">값</th>
+            <th class="s">누적 값</th>
+            <th class="p" colspan="2">누적평균</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <tr><td style="color:#ffffff;">-</td></tr>
+          <tr><td style="color:#ffffff;">-</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="bodyWrap_1">
+      <div id="bodyWrap_2">
+      </div>
+    </div>
+    <hr id="line" title="0.5">
+    <script type="text/javascript">
+      var executed_time = 0;
+      var result_stack = 0;
+      var x_log_16 = new Array();
+      function execute(){
+        var stack_16 = 0;
+        for (var i = 1; i <= 16; i++) {
+          var random_bin = Math.round(Math.random()*10)%2;
+          stack_16 += random_bin;
+          result_stack += random_bin;
+          document.getElementById('tbody').innerHTML += '<tr><td class="n">'+(i + executed_time * 16)+'</td><td class="x">'+random_bin+'</td><td class="s">'+result_stack+'</td><td class="pf">'+(result_stack / (i + executed_time * 16))+'</td><td class="p">('+result_stack+'/'+(i + executed_time * 16)+')</td></tr>';
+          document.getElementById('bodyWrap_2').innerHTML += '<div class="bar"><span style="top:'+((50 - Math.round(1000 * result_stack / (executed_time * 16 + i)) / 10) * 3 + 160)+'px"><em id="'+(executed_time * 16 + i)+'" title="'+(result_stack / (executed_time * 16 + i))+'"></em></span></div>';
+        }
+        x_log_16[i + executed_time * 16] = stack_16;
+        // 0~16로 만들것
+        executed_time++;
+        document.getElementById('bodyWrap_2').style.minWidth = (6*16*executed_time)+'px';
+        document.getElementById('info').innerHTML = '시행 횟수 : '+(executed_time * 16)+' <br> 누적 평균 : '+(result_stack / (executed_time * 16 + i));
+        if (executed_time == 25){
+          alert('400번 이상의 시행에서 부터 다소 렉이 심해지니 주의!');
+        }
+      }
+    </script>
+  </body>
+</html>
