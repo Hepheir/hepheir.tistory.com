@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="theme-color" content="#FFFFFF">
+		<title>[##_title_##]</title>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,900' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="./style.css" media="screen">
+		<link rel="stylesheet" href="images/customHtml.css" media="screen" role="editor support">
+	</head>
+	<body>
+		<div class="page">
+
+			<header>
+				<a class="icon menu__toggle-wrap"><!-- href="javascript:void(0)" -->
+					<!-- menu__toggle 체크박스는 사이드 바 쪽에 둠 -->
+					<label class="menu__toggle-label" for="menu__toggle">
+						<i class="material-icons">&#xE5D2;</i>
+					</label>
+				</a>
+
+				<a href="[##_blog_link_##]" class="header__title-wrap noEfx">
+					<h3 class="header__title">[##_title_##]</h3>
+				</a>
+
+				<input id="search__input" type="text" name="name" placeholder="검색">
+				<a class="icon header_dropdown__toggle-wrap">
+					<label class="header_dropdown__toggle-label" for="header_dropdown__toggle">
+						<i class="material-icons">&#xE5D4;</i>
+					</label>
+				</a>
+				<input id="header_dropdown__toggle" type="checkbox">
+				<aside class="header_dropdown">
+					<label class="hide_header_dropdown-label" for="header_dropdown__toggle"></label>
+					<div class="header_dropdown__container">
+						<ul class="header_dropdown__container-overflowFix">
+							<li class="dropdown-item">
+								<a href="[##_owner_url_##]/entry/post" class="noEfx">글쓰기</a>
+							</li>
+							<li class="dropdown-item">
+								<a href="[##_owner_url_##]" class="noEfx">관리자</a>
+							</li>
+							<li class="dropdown-item">
+								<a href="[##_owner_url_##]/skin/edit" class="noEfx">HTML/CSS 편집</a>
+							</li>
+							<!-- item을 추가 할 시 css에서
+
+#header_dropdown__toggle:checked + aside .header_dropdown__container {
+max-height: 200px;
+}
+
+위 부분의 max-height 값을 새로 설정해 주어야 합니다.
+-->
+						</ul>
+					</div>
+				</aside>
+
+			</header>
+
+			<content>
+				<s_list>
+					<!-- 11. 검색 결과 리스트 -->
+					<!-- <s_list_rep>
+<li class="feed">
+<item class="feed__header">
+<p></p>
+<div class="feed__header-item">
+<a href="[##_list_rep_link_##]" class="feed__title">[##_list_rep_title_##]</a>
+<a class="feed__category"><span class="material-icons feed__category-arrow">&#xE037;</span>[##_list_rep_author_##]</a>
+</div>
+<p class="feed__date">[##_list_rep_regdate_##]</p>
+</item>
+</li>
+</s_list_rep> -->
+				</s_list>
+				<s_rplist>
+					<!-- 12. 검색 결과 댓글 리스트 -->
+					<s_rplist_rep>
+					</s_rplist_rep>
+				</s_rplist>
+				<s_local>
+					<div id="locallog">13. 위치 로그 ...이지만 위치로그로 사용하지 않을거임</div>
+				</s_local>
+				<s_tag>
+					<div id="taglog">14. 태그 클라우드 ...이지만 다른 기능으로 사용할 예정</div>
+				</s_tag>
+				<s_guest>
+					<!-- 15. 방명록 -->
+					<div id="guestbook">
+						<s_guest_input_form>
+							<!-- 15-1. 방명록 글쓰기 -->
+							<div id="guestWrite">
+								<s_guest_member>
+									<s_guest_form>
+									</s_guest_form>
+								</s_guest_member>
+							</div>
+						</s_guest_input_form>
+						<s_guest_container>
+							<!-- 15-2. 방명록 리스트 -->
+							<s_guest_rep>
+								<s_guest_reply_container>
+									<s_guest_reply_rep>
+									</s_guest_reply_rep>
+								</s_guest_reply_container>
+							</s_guest_rep>
+						</s_guest_container>
+					</div><!-- guestbook close -->
+				</s_guest>
+
+				<s_notice_rep>
+					<div class="notice_article">
+						<li class="feed feed-notice">
+							<item class="feed__header">
+								<p></p>
+								<div class="feed__header-item">
+									<a href="[##_article_rep_link_##]" class="feed__title feed-notice noEfx">[##_article_rep_title_##]</a>
+									<a href="[##_article_rep_category_link_##]" class="feed__category feed-notice noEfx"><i class="material-icons feed__category-arrow">&#xE037;</i>NOTICE!!</a>
+								</div>
+								<p class="feed__date feed-notice">[##_article_rep_date_##]</p>
+							</item>
+							<item class="feed__article feed-notice">
+								NOTICE!!
+							</item>
+							<item class="feed__action">
+
+							</item>
+						</li>
+					</div>
+				</s_notice_rep>
+
+				<s_article_protected>
+					<div class="protected_article">
+						<li class="feed feed-protected">
+							<item class="feed__header">
+								<p></p>
+								<div class="feed__header-item">
+									<a href="[##_article_rep_link_##]" class="feed__title noEfx">[##_article_rep_title_##]</a>
+									<a href="[##_article_rep_category_link_##]" class="feed__category noEfx"><i class="material-icons feed__category-arrow">&#xE037;</i>[##_article_rep_category_##]</a>
+								</div>
+								<p class="feed__date">[##_article_rep_date_##]</p>
+							</item>
+							<item class="feed__action">
+
+							</item>
+							<item class="feed__article">
+								<p style="color: #616161">보호되어 있는 글 입니다.<br>내용을 보시려면 비밀번호를 입력하세요.</p>
+								<div class="feed-protected__article_password-wrap">
+									<input class="feed-protected__article_password-input" type="password" maxlength="16" name="[##_article_password_##]" onkeydown="if (event.keyCode == 13)[##_article_dissolve_##]" value=""/>
+									<label class="feed-protected__article_password-border"></label>
+								</div>
+								<button class="feed-protected__article_password-confirm" type="submit" onclick="[##_article_dissolve_##]">확인</button>
+							</item>
+						</li>
+					</div>
+				</s_article_protected>
+
+				<s_article_rep>
+					<ul class="index_article">
+						<s_index_article_rep>
+							<li class="feed">
+								<item class="feed__header">
+									<p></p>
+									<div class="feed__header-item">
+										<a href="[##_article_rep_link_##]" class="feed__title noEfx">[##_article_rep_title_##]</a>
+										<a href="[##_article_rep_category_link_##]" class="feed__category noEfx"><span class="material-icons feed__category-arrow">&#xE037;</span>[##_article_rep_category_##]</a>
+									</div>
+									<p class="feed__date">[##_article_rep_date_##]</p>
+								</item>
+								<item class="feed__article">[##_article_rep_summary_##]</item>
+								<s_article_rep_thumbnail>
+									<item class="feed__thumbnail">
+										<img src="[##_article_rep_thumbnail_raw_url_##]" alt="image not found" />
+									</item>
+								</s_article_rep_thumbnail>
+								<item class="feed__action">
+
+								</item>
+							</li>
+						</s_index_article_rep>
+					</ul>
+					<s_permalink_article_rep>
+						<div class="perma_article">
+							<li class="feed">
+								<item class="feed__header">
+									<p></p>
+									<div class="feed__header-item">
+										<a href="[##_article_rep_link_##]" class="feed__title noEfx">[##_article_rep_title_##]</a>
+										<a href="[##_article_rep_category_link_##]" class="feed__category noEfx"><span class="material-icons feed__category-arrow">&#xE037;</span>[##_article_rep_category_##]</a>
+									</div>
+									<p class="feed__date">[##_article_rep_date_##]</p>
+								</item>
+								<item class="feed__article">[##_article_rep_desc_##]</item>
+								<item class="feed__action">
+
+								</item>
+							</li>
+						</div>
+					</s_permalink_article_rep>
+				</s_article_rep>
+			</content>
+
+			<input id="menu__toggle" type="checkbox">
+			<aside>
+				<label class="hide_sidebar-label" for="menu__toggle"></label>
+				<ul class="sidebar__container">
+					<s_sidebar>
+						<s_sidebar_element>
+							<li class="sidebar__element sidebar-header">
+							</li>
+						</s_sidebar_element>
+						<s_sidebar_element>
+							<li class="sidebar__element sidebar-category">
+
+							</li>
+						</s_sidebar_element>
+					</s_sidebar>
+				</ul>
+			</aside>
+
+			
+
+			<footer>
+				<div class="djBox">
+					<div id="player"></div>
+
+					<div class="youtubeAPI_highlighter"></div>
+
+					<input id="playlistControl" type="checkbox"/>
+					<ul class="playlist">
+						<!-- <li>play que will be placed here</li> -->
+					</ul>
+					<label class="playlist-toggle" for="playlistControl">
+						<span class="playlist-toogleIcon">
+							<i class="material-icons">&#xE03D;</i>
+							<p>playlist</p>
+						</span>
+					</label>
+				</div>
+			</footer>
+
+		</div> <!-- container close -->
+
+		<s_t3>
+			<script src="./images/youtubeAPI.js"></script>
+			<script>
+				class Resizing {
+					constructor() {
+						this.header_title = document.querySelector('.header__title-wrap');
+						this.header_search = document.querySelector('#search__input');
+
+						this._Desktop = this._Desktop.bind(this);
+						this._Mobile = this._Mobile.bind(this);
+						this.onResize = this.onResize.bind(this);
+
+						window.addEventListener('resize', this.onResize);
+						this.onResize();
+					}
+
+					onResize() {
+						if (window.innerWidth < 480) {
+							this._Mobile();
+							return;
+						}
+						this._Desktop();
+					}
+
+					_Mobile() {
+						this.header_title.style.flexGrow = '1';
+						this.header_search.style.display = 'none';
+					}
+
+					_Desktop() {
+						this.header_title.style.flexGrow = '0';
+						this.header_search.style.display = 'block';
+					}
+				}
+				new Resizing();
+
+				// var isMobile = window.innerWidth > window.innerHeight ? false : true;
+				// console.log('isMobile :', isMobile);
+
+
+				// 2016 10 30 에 작성. protected article이 focus되었을 때 opacity transition을 받지 않도록 해주는 기능.
+
+				class ProtectedFeeds {
+					constructor() {
+						this.feedPw = document.querySelectorAll('.feed-protected__article_password-input');
+
+						this.addEventListeners();
+					}
+
+					addEventListeners() {
+						for (var i = 0; i < this.feedPw.length; i++) {
+							this.feedPw[i].addEventListener('focus', this.onFocused);
+							this.feedPw[i].addEventListener('focusout', this.unFocused);
+						}
+					}
+
+					onFocused(evt) {
+						event.target.parentNode.parentNode.parentNode.classList.add('--focused');
+					}
+
+					unFocused(evt) {
+						event.target.parentNode.parentNode.parentNode.classList.remove('--focused');
+					}
+				}
+				new ProtectedFeeds();
+
+
+				// 2016 10 25 에 작성. 날짜, 윤년 계산을 세심히 하지 않았으므로 수능 끝나고 다시 검토 할 것을 당부.
+
+				class DateFix {
+					constructor() {
+						this.feedDate = document.querySelectorAll('.feed__date');
+						this.date = new Date();
+						this.td = {
+							year : this.date.getFullYear(),
+							month : this.date.getMonth() + 1, // month : 0 ~ 11 (zero-based index)
+							day : this.date.getDate(),
+							hour : this.date.getHours(),
+							minute : this.date.getMinutes()
+						};
+
+						this.fixDate = this.fixDate.bind(this);
+
+						for (var i = 0; i < this.feedDate.length; i++) {
+							this.fixDate(this.feedDate[i]);
+						}
+					}
+
+					fixDate(_feedDate) {
+						try {
+							this.a = _feedDate.innerHTML.split('.');
+							this.fd = {
+								year : parseInt(this.a[0]),
+								month : parseInt(this.a[1]),
+								day : parseInt(this.a[2].split(' ')[0]),
+								hour : parseInt(this.a[2].split(' ')[1].split(':')[0]),
+								minute : parseInt(this.a[2].split(' ')[1].split(':')[1])
+							};
+
+							if (this.td.year > this.fd.year) {
+								this.fixedDate = this.td.year - 1 > this.fd.year ? `${this.td.year - this.fd.year}년` : `${this.td.month - this.fd.month + 12}달`;
+							}
+							else if (this.td.month > this.fd.month) {
+								this.fixedDate = this.td.month - 2 > this.fd.month ? `${this.td.month - this.fd.month}달` : `${Math.floor((this.td.day - this.fd.day + (this.td.month - this.fd.month) * (new Date(this.fd.year, this.fd.month, 0)).getDate())/7)}주`;
+							}
+							else if (this.td.day > this.fd.day) {
+								this.fixedDate = this.td.day - 1 > this.fd.day ? `${this.td.day - this.fd.day}일` : `${this.td.hour - this.fd.hour + 24}시간`;
+							}
+							else {
+								this.fixedDate = this.td.hour > this.fd.hour ? `${this.td.hour - this.fd.hour}시간` : `${this.td.minute - this.fd.minute}분`;
+							}
+
+							_feedDate.innerHTML = this.fixedDate;
+						} catch (e) {
+							console.log(e);
+						}
+					}
+				}
+				new DateFix();
+			</script>
+		</s_t3>
+	</body>
+</html>
