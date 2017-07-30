@@ -14,42 +14,140 @@
 </head>
 <body>
 
-	<header>
-		<nav class="header__topbar">
-			<a>left-side-nav--toggle</a>
+<s_t3>
 
-			<a>title</a>
+<div class="page-layout">
+	<input id="l-side-nav--toggle" class="hidden" type="checkbox">
+	<input id="r-side-nav--toggle" class="hidden" type="checkbox">
 
-			<a>right-side-nav--toggle</a>
-		</nav>
-	</header>
-
-	<aside>
-		<div class="side-nav l-side-nav">
-			<div class="elem-about">
+	<aside class="l-side-nav">
+		<ul class="side-nav">
+			<li class="elem-about">
 				<label class="show-about"></label>
 
 				<div class="about">
 					<span>필명</span>
+					
+					<button class="admin-menu">
+						<svg class="" height="24" viewBox="0 0 24 24" width="24">
+							<path d="M0 0h24v24H0z" fill="none"/>
+							<path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+						</svg>
+					</button>
 				</div>
+
 				<div class="about">
 					<span>블로그 설명</span>
 				</div>
-			</div>
+			</li>
 
-			<ul class="elem-notice"></ul>
-			<ul class="elem-category"></ul>
-		</div>
-
-		<div class="side-nav r-side-nav">
-			<div class="elem-footer"></div>
-		</div>
+			<li class="elem-notice"></li>
+			<li class="elem-category"></li>
+		</ul>
 	</aside>
 
-<s_t3>
+	<div class="m-content">
+		<header>
+			<nav class="hdr__topbar">
+				<label class="hdr__l-side-nav--label" for="l-side-nav--toggle">
+					<svg class="l-side-nav--label__svg" height="24" viewBox="0 0 24 24" width="24">
+						<path d="M0 0h24v24H0z" fill="none"/>
+						<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+					</svg>
+				</label>
 
-	<main class="page__body">
-	</main>
+				<a class="hdr__blog-title" href="">title</a>
+
+				<label class="hdr__r-side-nav--label" for="r-side-nav--toggle">
+					<svg class="r-side-nav--label__svg" height="24" viewBox="0 0 24 24" width="24">
+						<path d="M0 0h24v24H0z" fill="none"/>
+						<path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+					</svg>
+				</label>
+			</nav>
+		</header>
+
+		<main class="page__body">
+
+		</main>
+	</div>
+
+
+	<aside class="r-side-nav">
+		<ul class="side-nav">
+			<li class="elem-footer">
+				<span class="ftr__copyright">
+					<a href="[##_blog_link_##]">[##_blogger_##]</a> 의 블로그
+					<br>Designed by <a href="http://hepheir.tistory.com/">Hepheir</a>
+				</span>
+			</li>
+		</ul>
+	</aside>
+
+</div>
+
+<script>
+'use strict';
+
+var onResize = (() => {
+	let l_sidenavToggle = document.getElementById('l-side-nav--toggle'),
+		r_sidenavToggle = document.getElementById('r-side-nav--toggle');
+		
+	let breakpoints = {
+		'xs': {
+			width: 360,
+			onchange: () => {
+
+			}
+		},
+		's' : {
+			width: 480,
+			onchange: () => {
+				
+			}
+		},
+		'm' : {
+			width: 860,
+			onchange: () => {
+				l_sidenavToggle.checked = false;
+			}
+		},
+		'l' : {
+			width: 1280,
+			onchange: () => {
+				l_sidenavToggle.checked = true;
+				r_sidenavToggle.checked = false;
+			}
+		},
+		'xl': {
+			width: undefined,
+			onchange: () => {
+				r_sidenavToggle.checked = true;
+			}
+		}
+	};
+
+	return () => {
+		let scrX = window.innerWidth;
+
+		for (let key in breakpoints) {
+			if (scrX > breakpoints[key].width && breakpoints[key].width !== undefined)
+				continue;
+
+			if (document.body.className != key) {
+				document.body.className = key;
+
+				breakpoints[key].onchange();
+			}
+			return;
+		}
+	}
+})();
+
+onResize();
+window.addEventListener('resize', onResize);
+
+</script>
 
 </s_t3>
 
