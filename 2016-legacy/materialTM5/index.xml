@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<skin>
+	<information>
+		<name>Material T</name>
+		<version>Mark5</version>
+		<description>
+			<![CDATA[ 구글 Material 디자인의 반응형 1단스킨입니다.
+			]]>
+		</description>
+		<license>
+			<![CDATA[(CC BY-NC-SA 4.0)/재배포 문의 - 뭐하라 http://nubiz.tistory.com]]>
+		</license>
+		<tags>
+			<tag>스킨위자드</tag> <tag>1단</tag> <tag>머테리얼디자인</tag>
+		</tags>
+	</information>
+	<author>
+		<name>뭐하라</name>
+		<homepage>http://nubiz.tistory.com</homepage>
+		<email>nubiz@naver.com</email>
+	</author>
+	<default>
+		<recentEntries>5</recentEntries>
+		<recentComments>5</recentComments>
+		<recentTrackbacks>5</recentTrackbacks>
+		<itemsOnGuestbook>10</itemsOnGuestbook>
+		<tagsInCloud>30</tagsInCloud>
+		<sortInCloud>3</sortInCloud>
+		<expandComment>1</expandComment>
+		<expandTrackback>1</expandTrackback>
+		<lengthOfRecentNotice>35</lengthOfRecentNotice>
+		<lengthOfRecentEntry>35</lengthOfRecentEntry>
+		<lengthOfRecentComment>35</lengthOfRecentComment>
+		<lengthOfRecentTrackback>35</lengthOfRecentTrackback>
+		<lengthOfLink>35</lengthOfLink>
+		<showListOnCategory>1</showListOnCategory>
+		<showListOnArchive>1</showListOnArchive>
+		<trackbackMessage>
+			<none>Trackback &lt;span class="cnt"&gt;0&lt;/span&gt;</none>
+			<single>Trackback &lt;span class="cnt"&gt;1&lt;/span&gt;</single>
+		</trackbackMessage>
+		<commentMessage>
+			<none>Comment &lt;span class="cnt"&gt;0&lt;/span&gt;</none>
+			<single>Comment &lt;span class="cnt"&gt;1&lt;/span&gt;</single>
+		</commentMessage>
+		<tree>
+			<color>666666</color>
+			<bgColor>f8f8f8</bgColor>
+			<activeColor>666666</activeColor>
+			<activeBgColor>f8f8f8</activeBgColor>
+			<labelLength>27</labelLength>
+			<showValue>1</showValue>
+		</tree>
+		<contentWidth>1000</contentWidth>
+		<toolbar>white</toolbar>
+		<layout>1</layout>
+	</default>
+</skin>

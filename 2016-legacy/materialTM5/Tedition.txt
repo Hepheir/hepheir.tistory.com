@@ -1,0 +1,107 @@
+<div id="tedition" class="tt-wrap-item teditionType1">
+    <h2 class="tt-item-title">
+        <span class="tt-item-title-bg"><span class="tt-item-title-inner"><i class="ic-chevron_right"></i> [##_item_title_##]</span></span>
+    </h2>    
+    <s_tabloid>
+        <s_article_rep>
+            <div class="col-md-6 teditionItemWrap">
+                <div class="teditionItem card flatbutton">
+                    <a class="buttonAnchor ripplelink" href="[##_article_rep_link_##]" title="[##_article_rep_title_##]">
+                        <img src="http://[##_article_rep_thumb_host_##]/C400x400/[##_article_rep_thumb_hash_##]"/>         
+                        <div class="teditionTitleAndDesc">
+                          <h3>[##_article_rep_title_excerpt_##]</h3>
+                          <p>[##_article_rep_desc_excerpt_##]</p>
+                        </div>
+                        <div class="teditionInfo"><span>[##_article_rep_date_##]</span></div>
+                    </a>
+                </div>
+            </div>
+        </s_article_rep>
+    </s_tabloid>
+    <style>
+        .contents>.card.clearfix {
+          background: none!important;
+          box-shadow: none;
+          margin:-4px;
+        }
+        #ttCanvas {
+          width: 100%!important;
+        }
+        #ttCanvas .tt-span-12{
+          width: 100%!important;
+        }
+        #ttCanvas .teditionType1 h2.tt-item-title {
+          color: #fff;
+          text-shadow: rgba(0,0,0,0.5) 2px 2px 8px;
+          font-size: 1.5em!important;
+          font-family: "NanumBarunGothic", 맑은 고딕, malgun gothic, AppleGothicNeoSD, Apple SD 산돌고딕 Neo, Microsoft NeoGothic, Droid sans, sans-serif!important;
+        }
+        #ttCanvas .teditionType1 .tt-item .teditionItem a:hover {
+          text-decoration: none!important;
+        }
+        #ttCanvas .teditionType1 .teditionItemWrap{
+          padding: 4px!important;
+        }
+        #ttCanvas .teditionType1 .teditionItem{
+          width:100%;
+          height: 180px;
+          transition:0.3s;
+          overflow: hidden;
+          background: #fff;
+        }
+        #ttCanvas .teditionType1 .teditionItem:hover {
+          box-shadow: 8px 8px 24px 2.4px rgba(0, 0, 0, 0.2);
+          z-index: 2;
+        }
+        #ttCanvas .teditionType1 .teditionItem img{
+          height:180px;
+          position: absolute;
+        }
+        #ttCanvas .teditionType1 .teditionTitleAndDesc{
+          padding: 0 16px;
+          margin-left: 180px;
+          overflow: hidden;
+        }
+        #ttCanvas .teditionType1 .teditionTitleAndDesc h3{
+          line-height: 56px;
+          height: 56px;
+          font-weight: bold!important;
+          font-size: 16px!important;
+          overflow: hidden;
+        }
+        #ttCanvas .teditionType1 .teditionTitleAndDesc p{
+          font-size: 12px!important;
+          line-height: 20px;
+        }
+        @media(max-width:768px){
+          #ttCanvas .teditionType1 .teditionItem img{
+            height:130px;
+          }
+          #ttCanvas .teditionType1 .teditionItem{
+            height: 130px;
+          }
+          #ttCanvas .teditionType1 .teditionTitleAndDesc{
+            padding: 0 8px;
+            margin-left: 130px;            
+          }
+          #ttCanvas .teditionType1 .teditionTitleAndDesc h3{
+            line-height: 42px;
+            height: 42px;
+            font-size: 14px!important; 
+          }
+          #ttCanvas .teditionType1 .teditionTitleAndDesc p{
+            font-size: 10px!important;    
+            line-height: 16px;        
+          }
+        }
+        #ttCanvas .teditionType1 .teditionInfo {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          color: #aaa;
+          padding: 0px 10px!important;
+          line-height: 24px;
+          font-size: 9px!important;
+        }
+    </style>
+</div> 

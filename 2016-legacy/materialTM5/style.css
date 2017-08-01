@@ -1,0 +1,125 @@
+@charset "UTF-8";
+/* skinwizard */
+.backgroundImg {
+  background-image:/*@background-image*/url("./images/Background.jpg")/*@*/;
+  background-color:/*@background-color*/#eee/*@*/;
+  background-size: cover;
+  background-repeat: /*@background-image-repeat=*/no-repeat/*@*/;
+  background-position:/*@background-image-position*/center/*@*/;
+}
+.homeBG {
+  height:/*@title-height*/300px/*@*/;
+  background-image:/*@title-background-image*/url("./images/homeBG.jpg")/*@*/;
+  background-position:/*@title-background-image-position*/50% 50%/*@*/;
+  background-color:/*@title-background-color*/#000000/*@*/;
+  background-size: cover;
+  background-repeat: /*@title-background-image-repeat=*/repeat/*@*/;
+  font-family:/*@title-font-family*/"NanumBarunGothic"/*@*/;
+  color:/*@title-color*/#FFFFFF/*@*/;
+  padding:16px;
+}
+.homeBG .homeName{
+  font-size:/*@title-font-size*/1.5em/*@*/;  
+}
+@font-face {
+  font-family: 'NanumBarunGothic';
+  src: url("./images/NanumBarunGothic.eot");
+  src: url("./images/NanumBarunGothic.eot?#iefix") format("embedded-opentype"), url("./images/NanumBarunGothic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+@media(min-width:768px) {
+  .container {
+    width: 768px;
+  }
+}
+@media(min-width:1200px) {
+  .container {
+    width: /*@post-width+200:*/1000px/*@*/;
+  }
+}
+@media(min-width:1400px) {
+  .container {
+    width: /*@post-width:+400*/1200px/*@*/;
+  }
+}
+
+article .titleWrap h2 {
+  color:/*@post-title-color*/#000000/*@*/;
+  font-family:/*@post-title-font-family*/"NanumBarunGothic"/*@*/;
+  font-size:/*@post-title-font-size*/2em/*@*/;
+}
+article .article{
+  color:/*@post-body-color*/#000000/*@*/;
+  font-family:/*@post-body-font-family*/"NanumBarunGothic"/*@*/;
+  font-size:/*@post-body-font-size*/1em/*@*/;
+}
+/*드로워 배경이미지*/
+#drawer #drawerProfile {
+  background-image: url("./images/drawerBG.jpg");
+}
+/*color customize*/
+/*blue*/
+header {
+  background: #3F51B5;
+}
+header #searchBox {
+  background: #3F51B5;
+}
+header #searchBox input {
+  background: #3F51B5;
+}
+/*lightblue*/
+#searchResultWrap .moreResult a {
+  color: #4285f4;
+}
+#searchList .listHeader {
+  border-bottom: #4285f4 solid 2px;
+}
+article .article a {
+  color: #4285f4;
+}
+article .article h1, article .article h2, article .article h3, article .article h4, article .article h5, article .article h6 {
+  border-left: #4285f4 solid 5px;
+  border-bottom: #4285f4 solid 2px;
+}
+article .article .moreless_content {
+  border: #4285f4 dotted 1px;
+}
+.commentsWrap .tabs {
+  background: #4285f4;
+}
+.commentsWrap .tabs li {
+  border-bottom: #4285f4 solid 2px;
+}
+#guestbook form .write textarea:focus, .commentsWrap form .write textarea:focus {
+  border-bottom: #4285f4 solid 2px;
+}
+#guestbook form .write button.submit, .commentsWrap form .write button.submit {
+  color: #4285f4;
+}
+#paging a {
+  color: #4285f4;
+}
+aside .tabs li.active {
+  border-bottom: #4285f4 solid 2px;
+}
+footer {
+  background: #4285f4;
+}
+/*pink*/
+#guestbook form .write .writerInfo label, .commentsWrap form .write .writerInfo label {
+  color: #ff4081;
+}
+#guestbook form .write .writerInfo input[type="text"]:focus, #guestbook form .write .writerInfo input[type="password"]:focus, .commentsWrap form .write .writerInfo input[type="text"]:focus, .commentsWrap form .write .writerInfo input[type="password"]:focus {
+  border-bottom: #ff4081 solid 2px;
+}
+#toTop {background: #ff4081;}
+article .titleWrap .admin{background: #ff4081;}
+/*yellow*/
+.commentsWrap li.active {
+  border-bottom: #FFF176 solid 2px;
+}
+
+/*user css*/
