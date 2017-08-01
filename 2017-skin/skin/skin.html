@@ -10,7 +10,7 @@
 	<meta name="theme-color" content="#FFFFFF">
 	<title>[##_title_##]</title>
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="style.css" media="screen">
+	<link rel="stylesheet" href="./style.css" media="screen">
 </head>
 <body>
 
@@ -30,22 +30,23 @@
 
 			<svg class="app-bar__divider" height="32" viewBox="0 0 1 32" width="1"><path d="M0 0v32h1v-32v-1z"/></svg>
 			
-			<h1 class="app-bar__title">카테고리</h1>
+			<h1 id="js--app-bar__title" class="app-bar__title">카테고리</h1>
 
 			<div class="app-bar__search">
+
 				<label class="search__icon" for="search-fullmode--toggle">
-					<svg height="24" viewBox="0 0 24 24" width="24">
-						<path class="svg__search" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-						<path class="svg__arrow-back" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
-						<path d="M0 0h24v24H0z" fill="none"/>
-					</svg>
+					<svg height="24" viewBox="0 0 24 24" width="24"><path class="svg__search" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path class="svg__arrow-back" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
 				</label>
 
-				<input id="js--search__input" class="search__input" type="text" placeholder="검색">
-				
+
+				<s_search>
+					<input id="js--search__input" class="search__input" type="text" placeholder="검색" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }">
+				</s_search>
+
 				<button id="js--search--clear" class="search--clear">
 					<svg height="24" viewBox="0 0 24 24" width="24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
 				</button>
+				
 			</div>
 
 			<label class="app-bar__icon right-nav--label" for="right-nav--toggle">
@@ -62,6 +63,7 @@
 		</aside>
 
 		<main class="content-layout">
+
 			<div class="content">dd</div>
 		</main>
 		

@@ -26,3 +26,32 @@ addEvent(window, 'resize', onResize);
 		searchInput.focus();
 	});
 })();
+
+(function setPageTitle() {
+    var path, title;
+    path = location.pathname
+           .match(/\/([^/]*)/g)[0]
+           .replace('/', '');
+    if (path == "") {
+        title = '홈';
+    } else {
+        title = {
+            'category': (function() {
+                var category = location.pathname.match(/([^/]*)($|\/$|#)/g)[0];
+                category = decodeURI(category);
+                if (category == "category") {
+                    return '카테고리';
+                } else {
+                    return category;
+                }
+            })(),
+            'search': '검색'
+        }[path];
+        if (title == undefined) {
+            title = path;
+        }
+    }
+
+    document.getElementById('js--app-bar__title').innerHTML = title;
+
+})();
