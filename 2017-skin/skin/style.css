@@ -2,11 +2,14 @@
 
 /* 색상 설정 */
 
+.body-layout {
+    background-color: #F5F5F5;
+}
+
 /* 상단 바 영역 */
 .app-bar {
     background-color: #3F51B5;
     color: rgba(255, 255, 255, .84);
-    border-color: rgba(255, 255, 255, .84);
 
     box-shadow: 0 2px 9px rgba(0, 0, 0, .54);
 }
@@ -23,7 +26,7 @@
 
 /* 모바일 뷰에서 상단 바 검색 영역 */
 #search-fullmode--toggle:checked~.app-bar__search {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: #FFF;
     color: rgba(0, 0, 0, .56);
 }
 #search-fullmode--toggle:checked~.app-bar__search svg {
@@ -34,10 +37,24 @@
     color: rgba(0, 0, 0, .36);
 }
 
-.side-nav,.right-nav {
-    background-color: #FFCDD2;
+/* 양측 사이드 바 */
+.side-nav, .right-nav {
+    background-color: #FFF;
+    color: rgba(0, 0, 0, .84);
     box-shadow: 0 0 12px rgba(0, 0, 0, .36);
 }
+
+/* 사이드바 블로그 소개 영역 아이콘 */
+.side-nav .elem-info {
+    color: rgba(255, 255, 255, .84);
+}
+.side-nav .elem-info svg {
+    fill: rgba(255, 255, 255, .84);
+}
+
+
+
+
 
 /* 여기부터는 레이아웃 설정 */
 
@@ -58,9 +75,10 @@ input.hidden {position:fixed;opacity:0;pointer-events:none;}
 html,body {width: 100%;height: 100%;overflow: hidden;}
 
 
-/* Disable Tistory menu */
+/* Disable Tistory menu & initialize */
 #ttLinkEditMode,
 #tistorytoolbarid {display: none;}
+#wrapTabloidBody {height: 100%;}
 
 /* SVG */
 *:not(*[fill="none"]) {fill: inherit;}
@@ -149,6 +167,9 @@ html,body {width: 100%;height: 100%;overflow: hidden;}
     top: 0;
     left: 0;
 
+    display: flex;
+    flex-direction: column;
+
     transform: translateX(-102%);
     transition: transform .2s ease;
 }
@@ -216,9 +237,158 @@ html,body {width: 100%;height: 100%;overflow: hidden;}
 .content-layout {
     width: 100%;
     height: 100%;
-    max-width: 100%;
+    max-width: 720px;
     margin: 0 auto;
+    padding: 0 16px;
     
     flex-grow: 1;
     flex-shrink: 1;
+}
+.x.s .content-layout {padding: 0;}
+
+
+/* 사이드바 엘리먼트 */
+
+.side-nav__elem {
+    width: 100%;
+    display: block;
+}
+
+.elem-info {
+    height: 160px;
+
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    position: relative;
+
+    background-color: rgb(0, 0, 0);
+}
+
+.info__icon-more {
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    cursor: pointer;
+}
+
+.info__bgimage {
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    opacity: .6;
+}
+
+.info__default, .info__more {
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: opacity .2s ease;
+    pointer-events: none;
+}
+#info__more--toggle:checked ~ .info__default {opacity: 0;}
+.info__more {opacity: 0;}
+#info__more--toggle:checked ~ .info__more {opacity: 1;}
+
+.info__blogger {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+}
+
+.info__icon-admin {
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+
+    cursor: pointer;
+}
+.info__icon-admin {
+    pointer-events: all;
+}
+#info__more--toggle:checked~.info__default .info__icon-admin {
+    pointer-events: none;
+}
+
+.info__more {
+    padding: 16px 24px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* 티스토리 카테고리 리스트 */
+
+.elem-category {
+    width: 100%;
+    height: 100%;
+
+    flex-grow: 1;
+
+    overflow-y: auto;
+}
+
+ul.tt_category, ul.category_list , ul.sub_category_list {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+a.link_tit, a.link_item, a.link_sub_item {
+    width: 100%;
+    height: 48px;
+    padding: 16px;
+
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    font-size: 16px;
+    line-height: 1;
+
+    display: block;
+
+    transition: background-color .2s ease;
+}
+a.link_tit:hover, a.link_item:hover, a.link_sub_item:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+a.link_tit {
+    height: 48px;
+}
+
+a.link_item {
+    padding-left: 32px;
+}
+a.link_sub_item {
+    padding-left: 64px;
+}
+
+.c_cnt {
+    font-size: 12px;
+    color: rgba(0, 0, 0, .56);
 }
