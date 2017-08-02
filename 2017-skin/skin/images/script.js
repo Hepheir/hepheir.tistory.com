@@ -16,14 +16,16 @@ addEvent(window, 'resize', onResize);
 
 (function() {
 	var searchInput = document.getElementById('js--search__input'),
-		searchClear = document.getElementById('js--search--clear');
+        searchClear = document.getElementById('js--search--clear'),
+        fullmodeToggle = document.getElementsByClassName('js--search-fullmode--toggle')[0];
 	
 	addEvent(searchInput, 'focusout', function(evt) {
-		evt.currentTarget.value = '';
+        evt.currentTarget.value = '';
 	});
 
 	addEvent(searchClear, 'click', function() {
 		searchInput.focus();
+        fullmodeToggle.checked = true;
 	});
 })();
 
