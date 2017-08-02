@@ -34,6 +34,11 @@
     color: rgba(0, 0, 0, .36);
 }
 
+.side-nav,.right-nav {
+    background-color: #FFCDD2;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .36);
+}
+
 /* 여기부터는 레이아웃 설정 */
 
 *,*::before,*::after {
@@ -46,14 +51,16 @@
     color: inherit;
     text-decoration: none;
 }
-header,aside,main,div {width:100%;}
+header,aside,main {display: block;}
 ul {list-style:none;}
 input.hidden {position:fixed;opacity:0;pointer-events:none;}
 
 html,body {width: 100%;height: 100%;overflow: hidden;}
 
-.page-layout {width: 100%;height: 100%;display: flex; flex-direction: column;font-family: 'Roboto';}
-.body-layout {display: flex; flex-direction: row;}
+
+/* Disable Tistory menu */
+#ttLinkEditMode,
+#tistorytoolbarid {display: none;}
 
 /* SVG */
 *:not(*[fill="none"]) {fill: inherit;}
@@ -72,9 +79,9 @@ html,body {width: 100%;height: 100%;overflow: hidden;}
 .app-bar__title {max-width: 30%;padding: 0 24px;flex-grow: 0;flex-shrink: 0;font-size: 20px;font-weight: normal;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
 .s .app-bar__title {display: none;}
 
-.app-bar__search {max-width:720px;height: 48px;padding: 0 8px;flex-grow: 1;flex-shrink: 1;display: flex;flex-direction: row;align-items: center;border-radius: 4px;font-size: 20px;transition: background-color .2s ease;}
+.app-bar__search {max-width:720px;height: 48px;padding: 0 8px;margin-right: auto;flex-grow: 1;flex-shrink: 1;display: flex;flex-direction: row;align-items: center;border-radius: 4px;font-size: 20px;transition: background-color .2s ease;}
 
-/* 모바일에서는 검색바 input 활성화를 위해 버튼을 눌러야 함 */
+ /* 모바일에서는 검색바 input 활성화를 위해 버튼을 눌러야 함 */
 #search-fullmode--toggle:checked~.app-bar__search {width: 100%;height: 64px;position: fixed;top: 0;left: 0;border-radius: 0;}
 
 .s .app-bar__search {background-color: transparent;}
@@ -85,7 +92,7 @@ html,body {width: 100%;height: 100%;overflow: hidden;}
 .search__icon {width: 32px;height: 32px;padding: 4px;pointer-events: none;cursor: pointer;}
 .search__icon .svg__arrow-back {display: none;}
 
-/* 모바일에서 검색모드 진입시 '검색 아이콘' -> '뒤로가기 아이콘' */
+ /* 모바일에서 검색모드 진입시 '검색 아이콘' -> '뒤로가기 아이콘' */
 #search-fullmode--toggle:checked~.app-bar__search .svg__arrow-back {display: block;}
 #search-fullmode--toggle:checked~.app-bar__search .svg__search {display: none;}
 #search-fullmode--toggle:checked~.app-bar__search>.search__input {display: block;}
@@ -94,3 +101,124 @@ html,body {width: 100%;height: 100%;overflow: hidden;}
 
 .search--clear {width: 32px;height: 32px;padding: 4px;display: none;cursor: pointer;}
 .search__input:focus+.search--clear,.search--clear:hover {display: block;}
+
+
+/* 사이드바 메커니즘 */
+.page-layout {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    font-family: 'Roboto';
+}
+.body-layout {
+    height: 100%;
+    
+    display: flex;
+    flex-direction: row;
+}
+
+.side-nav-layout {
+    width: 0;
+    height: 100%;
+
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    position: relative;
+    
+    transition: width .2s ease;
+}
+.s .side-nav-layout {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+#side-nav--toggle:checked~.side-nav-layout {
+    width: 256px;
+}
+
+.side-nav {
+    width: 256px;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transform: translateX(-102%);
+    transition: transform .2s ease;
+}
+#side-nav--toggle:checked~.side-nav-layout>.side-nav {
+    transform: none;
+}
+
+.side-nav-shadow, .right-nav-shadow {
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    background-color: rgba(0, 0, 0, .3);
+    opacity: 0;
+
+    transition: opacity .2s ease;
+    pointer-events: none;
+}
+.s #side-nav--toggle:checked~.side-nav-layout>.side-nav-shadow,
+.s #right-nav--toggle:checked~.right-nav-layout>.right-nav-shadow,
+.l:not(.x) #right-nav--toggle:checked~.right-nav-layout>.right-nav-shadow {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.right-nav-layout {
+    width: 0;
+    height: 100%;
+    
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    
+    transition: width .2s ease;
+}
+.x.l .right-nav-layout {
+    position: relative;
+}
+#right-nav--toggle:checked~.right-nav-layout {
+    width: 256px;
+}
+
+.right-nav {
+    width: 256px;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    transform: translateX(102%);
+    transition: transform .2s ease;
+}
+#right-nav--toggle:checked~.right-nav-layout>.right-nav {
+    transform: none;
+}
+
+
+.content-layout {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    
+    flex-grow: 1;
+    flex-shrink: 1;
+}

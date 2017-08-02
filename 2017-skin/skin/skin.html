@@ -17,58 +17,56 @@
 <s_t3>
 
 <div class="page-layout">
+	<!-- 헤더 시작 -->
 	<header class="app-bar">
-
 		<nav class="app-bar-layout">
-			<input id="search-fullmode--toggle" class="hidden" type="checkbox">
+			<input id="search-fullmode--toggle" class="js--search-fullmode--toggle hidden" type="checkbox">
 
-			<label class="app-bar__icon side-nav--label" for="side-nav--toggle">
-				<svg height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
-			</label>
-
+			<label class="app-bar__icon side-nav--label" for="side-nav--toggle"><svg height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></label>
 			<a class="app-bar__blog-name" href="[##_blog_link_##]">[##_title_##]</a>
-
 			<svg class="app-bar__divider" height="32" viewBox="0 0 1 32" width="1"><path d="M0 0v32h1v-32v-1z"/></svg>
-			
 			<h1 id="js--app-bar__title" class="app-bar__title">카테고리</h1>
-
 			<div class="app-bar__search">
-
-				<label class="search__icon" for="search-fullmode--toggle">
-					<svg height="24" viewBox="0 0 24 24" width="24"><path class="svg__search" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path class="svg__arrow-back" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
-				</label>
-
-
+				<label class="search__icon" for="search-fullmode--toggle"><svg height="24" viewBox="0 0 24 24" width="24"><path class="svg__search" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path class="svg__arrow-back" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/><path d="M0 0h24v24H0z" fill="none"/></svg></label>
 				<s_search>
 					<input id="js--search__input" class="search__input" type="text" placeholder="검색" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }">
 				</s_search>
-
-				<button id="js--search--clear" class="search--clear">
-					<svg height="24" viewBox="0 0 24 24" width="24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
-				</button>
-				
+				<button id="js--search--clear" class="search--clear"><svg height="24" viewBox="0 0 24 24" width="24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg></button>
 			</div>
-
-			<label class="app-bar__icon right-nav--label" for="right-nav--toggle">
-				<svg height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
-			</label>
+			<label class="app-bar__icon right-nav--label" for="right-nav--toggle"><svg height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg></label>
 		</nav>
 	</header>
+	<!-- 헤더 끝 -->
 
 	<div class="body-layout">
 		<input id="side-nav--toggle" class="hidden" type="checkbox">
 		<input id="right-nav--toggle" class="hidden" type="checkbox">
 
+		<!-- 좌측 사이드바 시작 -->
 		<aside class="side-nav-layout">
+			<label for="side-nav--toggle" class="side-nav-shadow"></label>
+			<ul class="side-nav">
+				<li>[##_category_list_##]</li>
+			</ul>
 		</aside>
+		<!-- 좌측 사이드바 끝 -->
 
 		<main class="content-layout">
-
-			<div class="content">dd</div>
+			<div class="content">
+				콘텐츠
+				<!-- 검색 결과 리스트 시작 -->
+				<!-- 검색 결과 리스트 끝 -->
+			</div>
 		</main>
 		
+		<!-- 우측 사이드바 시작 -->
 		<aside class="right-nav-layout">
+			<label for="right-nav--toggle" class="right-nav-shadow"></label>
+			<ul class="right-nav">
+				<li>rightnav</li>
+			</ul>
 		</aside>
+		<!-- 우측 사이드바 끝 -->
 	</div> 
 </div>
 
@@ -121,7 +119,7 @@ var onResize = (function() {
 onResize();
 // regist event on `./images/script.js`
 </script>
-<script src="images/script.js"></script>
+<script src="./images/script.js"></script>
 
 </s_t3>
 
