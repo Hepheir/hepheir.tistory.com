@@ -39,8 +39,8 @@
 	<!-- 헤더 끝 -->
 
 	<div class="body-layout">
-		<input id="side-nav--toggle" class="hidden" type="checkbox">
-		<input id="right-nav--toggle" class="hidden" type="checkbox">
+		<input id="side-nav--toggle" class="js--side-nav--toggle hidden" type="checkbox">
+		<input id="right-nav--toggle" class="js--right-nav--toggle hidden" type="checkbox">
 
 		<!-- 좌측 사이드바 시작 -->
 		<aside class="side-nav-layout">
@@ -72,6 +72,9 @@
 
 <script>
 var onResize = (function() {
+	var sideNavToggle = document.getElementsByClassName('js--side-nav--toggle')[0],
+		rightNavToggle = document.getElementsByClassName('js--right-nav--toggle')[0];
+
 	var breakpoints = [
 		{
 			sizename: 'x s',
@@ -83,18 +86,30 @@ var onResize = (function() {
 			sizename: 's',
 			width: 784,
 			onchange: function() {
+				sideNavToggle.checked = false;
 			}
 		},
 		{
 			sizename: 'l',
 			width: 976,
 			onchange: function() {
+				sideNavToggle.checked = true;
+				rightNavToggle.checked = false;
 			}
 		},
 		{
 			sizename: 'x l',
+			width: 1280,
+			onchange: function() {
+				sideNavToggle.checked = true;
+			}
+		},
+		{
+			sizename: 'xx x l',
 			width: undefined,
 			onchange: function() {
+				sideNavToggle.checked = true;
+				rightNavToggle.checked = true;
 			}
 		}
 	];
