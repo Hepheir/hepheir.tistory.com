@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skin>
+	<information>
+		<name>Photo Essay</name>
+		<version>1.0</version>
+		<description>
+			<![CDATA[ 웹표준을 준수한 XHTML 기반의 Tistory 기본 스킨입니다.
+					  시맨틱한 웹을 유지하기 위해 디자인 부분을 style.css 파일에 독립시켜 적용하였으며
+					  자유롭게 디자인을 수정하실 수 있습니다.
+					  블로그 이미지 사이즈 180px, 콘텐츠의 가로 사이즈 580px에 최적화되어 있습니다.
+			]]>
+		</description>
+		<license>
+			<![CDATA[자유롭게 수정이 가능하며, 저작권 표시하에 재배포 가능합니다.]]>
+		</license>
+		<tags>
+			<tag>스킨위자드</tag> <tag>베이직</tag> <tag>심플</tag>
+		</tags>
+	</information>
+	<author>
+		<name>tistory</name>
+		<homepage>http://www.tistory.com</homepage>
+		<email>tistoryblog@hanmail.net</email>
+	</author>
+	<default>
+		<recentEntries>7</recentEntries>
+		<recentComments>4</recentComments>
+		<recentTrackbacks>4</recentTrackbacks>
+		<itemsOnGuestbook>5</itemsOnGuestbook>
+		<tagsInCloud>8</tagsInCloud>
+		<sortInCloud>3</sortInCloud>
+		<expandComment>0</expandComment>
+		<lengthOfRecentNotice>20</lengthOfRecentNotice>
+		<lengthOfRecentEntry>20</lengthOfRecentEntry>
+		<lengthOfRecentComment>20</lengthOfRecentComment>
+		<lengthOfRecentTrackback>20</lengthOfRecentTrackback>
+		<lengthOfLink>20</lengthOfLink>
+		<showListOnCategory>1</showListOnCategory>
+		<showListOnArchive>1</showListOnArchive>
+		<trackbackMessage>
+			<none>&lt;span class="ico_trackback"&gt;TRACKBACK : &lt;span class="txt_em"&gt;0&lt;/span&gt;&lt;/span&gt;</none>
+			<single>&lt;span class="ico_trackback"&gt;TRACKBACK : &lt;span class="txt_em"&gt;1&lt;/span&gt;&lt;/span&gt;</single>
+		</trackbackMessage>
+		<commentMessage>
+			<none>&lt;span class="ico_comment"&gt;COMMENT : &lt;span class="txt_em"&gt;0&lt;/span&gt;&lt;/span&gt;</none>
+			<single>&lt;span class="ico_comment"&gt;COMMENT : &lt;span class="txt_em"&gt;1&lt;/span&gt;&lt;/span&gt;</single>
+		</commentMessage>
+		<tree>
+			<color>898989</color>
+			<bgColor>transparent</bgColor>
+			<activeColor>898989</activeColor>
+			<activeBgColor>transparent</activeBgColor>
+			<labelLength>20</labelLength>
+			<showValue>1</showValue>
+		</tree>
+		<contentWidth>580</contentWidth>
+		<layout>2</layout>
+		<toolbar>blackBar</toolbar>
+		<menuList>
+			<menu>
+				<menuId>1</menuId>
+				<menuName>HOME</menuName>
+			</menu>
+			<menu>
+				<menuId>2</menuId>
+				<menuName>TAG</menuName>
+			</menu>
+			<menu>
+				<menuId>4</menuId>
+				<menuName>LOCATION LOG</menuName>
+			</menu>
+			<menu>
+				<menuId>6</menuId>
+				<menuName>GUEST BOOK</menuName>
+			</menu>
+			<menu>
+				<menuId>8</menuId>
+				<menuName>ADMIN</menuName>
+			</menu>
+			<menu>
+				<menuId>7</menuId>
+				<menuName>WRITE</menuName>
+			</menu>
+		</menuList>
+	</default>
+</skin>
